@@ -1,14 +1,6 @@
 import './Contacts.css';
-import { useState, useEffect } from 'react';
 
-const Contacts = () => {
-    const [text, setText] = useState([]);
-
-    useEffect(() => {
-      fetch('https://raw.githubusercontent.com/ChilikinAM/farm.kg-front/main/src/components/data/main_en.json')
-        .then(res => res.json())
-        .then(data => setText(data))
-    }, []);
+const Contacts = ({ text }) => {
     return (
         <div className="contactsMain">
             <div className="contactsContent">

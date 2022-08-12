@@ -1,14 +1,8 @@
 import './Homepage.css';
-import { useState, useEffect } from 'react';
 
-const Homepage = () => {
-    const [text, setText] = useState([]);
 
-    useEffect(() => {
-      fetch('https://raw.githubusercontent.com/ChilikinAM/farm.kg-front/main/src/components/data/main_en.json')
-        .then(res => res.json())
-        .then(data => setText(data))
-    }, []);
+const Homepage = ({ text }) => {
+
     return (
         <>
         <div className="arnamentLeft"></div>

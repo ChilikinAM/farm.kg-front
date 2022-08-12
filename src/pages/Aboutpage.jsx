@@ -1,14 +1,6 @@
 import './Aboutpage.css';
-import { useState, useEffect } from 'react';
 
-const About = () => {
-    const [text, setText] = useState([]);
-
-    useEffect(() => {
-      fetch('https://raw.githubusercontent.com/ChilikinAM/farm.kg-front/main/src/components/data/main_en.json')
-        .then(res => res.json())
-        .then(data => setText(data))
-    }, []);
+const About = ({ text }) => {
     return (
         <>
         <div className="arnament"></div>
