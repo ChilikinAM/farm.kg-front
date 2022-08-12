@@ -10,7 +10,6 @@ import { Layout } from './pages/Layout';
 
 import React from 'react';
 
-
 function App() {
   return (
     <>

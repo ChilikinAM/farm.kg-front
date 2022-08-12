@@ -1,16 +1,21 @@
 import './Aboutpage.css';
+import { useState, useEffect } from 'react';
 
 const About = () => {
+    const [text, setText] = useState([]);
 
+    useEffect(() => {
+      fetch('https://raw.githubusercontent.com/ChilikinAM/farm.kg-front/main/src/components/data/main_en.json')
+        .then(res => res.json())
+        .then(data => setText(data))
+    }, []);
     return (
         <>
         <div className="arnament"></div>
         <div className="aboutMain">
             <div className="aboutLeft">
-                <h1>Our mission </h1>
-                <h3>Farm KG is a B2B platform for small businesses to provide the best quality products to all over the world from Kyrgyzstan. 
-
-Kyrgyzstan's history spans a variety of cultures and empires. Although geographically isolated by its highly mountainous terrain, Kyrgyzstan has been at the crossroads of several great civilizations as part of the Silk Road and other commercial routes.</h3>
+                <h1>{text.aboutOurMission}</h1>
+                <h3>{text.aboutText}</h3>
             </div>
             <div className="aboutRight">
                 <div className='aboutImg1'></div>
